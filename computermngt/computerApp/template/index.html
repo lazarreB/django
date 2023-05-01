@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        {% block title %}
+        <title>Biliotheque locale</title>
+        {% endblock %}
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,
+        intial-scale=1.0">
+        {% load static %}
+        <link rel="stylessheet" href="{% static 'css/styles.css' %}">
+    </head>
+    <body>
+        {% block sidebar %}
+            <h2> Menu </h2>
+            <ul id="menu">
+                <li> <a href="{% url ’index’ %}"> Home </a> </li>
+            </ul>
+        {% endblock %}
+
+        {% load static %}
+        <img src="{% static ’computerapp/images/logo_200px.png’ %}"
+        alt="logo" style="width:200px;height:200px;">
+    {% block content %}
+        Blablade la premiere page
+    {% endblock %}
+    </body>
+</html>
+
+        
