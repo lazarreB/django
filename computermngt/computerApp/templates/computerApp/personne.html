@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+{% block content %}
+    <h1>liste des personnes</h1>
+    {% if personnes %}
+    <ul>
+        {% for personne in personne %}
+        <li>
+            {{personne.id}} - ({{personne.nom}})
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>il n\'y a personne. </p>
+    {% endif %}
+{% endblock %}
