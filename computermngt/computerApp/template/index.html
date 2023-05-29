@@ -2,7 +2,7 @@
 <html lang="fr">
     <head>
         {% block title %}
-        <title>Biliotheque locale</title>
+        <title>Machine Monitoring Dashboard</title>
         {% endblock %}
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,
@@ -11,6 +11,19 @@
         <link rel="stylessheet" href="{% static 'css/styles.css' %}">
     </head>
     <body>
+         <main>
+    <section id="login">
+      <h2>Login</h2>
+      <form action="{% url 'login' %}" method="POST">
+        {% csrf_token %}
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+        <input type="submit" value="Login">
+      </form>
+    </section>
+  </main>
         {% block sidebar %}
             <h2> Menu </h2>
             <ul id="menu">
@@ -24,6 +37,9 @@
     {% block content %}
         Blablade la premiere page
     {% endblock %}
+        <footer>
+    <p>&copy; 2023 R&T enterprise. trial page</p>
+  </footer>
     </body>
 </html>
 
